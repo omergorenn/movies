@@ -2,6 +2,7 @@ package dev.omergrn.movies.Controllers;
 
 import dev.omergrn.movies.Model.Review;
 import dev.omergrn.movies.Services.ReviewService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.Optional;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/v1/reviews")
+@RequiredArgsConstructor
 public class ReviewController {
 
     @Autowired
