@@ -1,19 +1,18 @@
-package dev.omergrn.movies.Services;
+package dev.omergrn.movies.services;
 
-import dev.omergrn.movies.Model.Movie;
-import dev.omergrn.movies.Repositories.MovieRepository;
-import org.bson.types.ObjectId;
-import org.springframework.beans.factory.annotation.Autowired;
+import dev.omergrn.movies.model.Movie;
+import dev.omergrn.movies.repositories.MovieRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class MovieService {
 
-    @Autowired
-    private MovieRepository movieRepository;
+    private final MovieRepository movieRepository;
 
     public List<Movie> allMovies(){
         return movieRepository.findAll();

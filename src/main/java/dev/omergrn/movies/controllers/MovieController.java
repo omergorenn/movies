@@ -1,9 +1,8 @@
-package dev.omergrn.movies.Controllers;
+package dev.omergrn.movies.controllers;
 
-import dev.omergrn.movies.Model.Movie;
-import dev.omergrn.movies.Services.MovieService;
-import org.bson.types.ObjectId;
-import org.springframework.beans.factory.annotation.Autowired;
+import dev.omergrn.movies.model.Movie;
+import dev.omergrn.movies.services.MovieService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +13,9 @@ import java.util.Optional;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/v1/movies")
+@RequiredArgsConstructor
 public class MovieController {
-    @Autowired
-    private MovieService movieService;
+    private final MovieService movieService;
 
 
     @GetMapping
@@ -26,7 +25,4 @@ public class MovieController {
 
     @GetMapping("/{imdbId}")
     public ResponseEntity<Optional<Movie>> getMovie(@PathVariable String  imdbId){
-        return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(imdbId),HttpStatus.OK);
-    }
-
-}
+        return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(imdbId),HttpStatus.OK);}}

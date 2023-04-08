@@ -1,6 +1,6 @@
-package dev.omergrn.movies.Repositories;
+package dev.omergrn.movies.repositories;
 
-import dev.omergrn.movies.Model.Review;
+import dev.omergrn.movies.model.Review;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
